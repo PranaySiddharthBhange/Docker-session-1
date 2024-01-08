@@ -1,0 +1,58 @@
+
+1. docker run -d --name my_container -p 8080:80 -v /host/path:/container/path my_image
+
+   - Description: Create and start a container from an image.
+   - Options:
+     - `-d`: Run the container in the background.
+     - `--name`: Assign a name to the container.
+     - `-p`: Map host ports to container ports.
+     - `-v`: Mount a volume from the host to the container.
+     - `--env`: Set environment variables.
+
+
+
+2. docker ps
+   - Description: List running containers.
+   - Options:
+     - `-a`: Show all containers (including stopped ones).
+     - `-q`: Only display container IDs.
+  
+
+
+3. docker stop <container_id or container_name>
+   - Description: Stop a running container.
+   - Options: `<container_id or container_name>`
+
+
+
+4. docker rm  <container_id or container_name>
+   - Description: Remove one or more containers.
+   - Options:
+     - `-f`: Force removal of a running container.
+     - `-v`: Remove associated volumes.
+
+5. docker commit <container_id> <new_image_name>:<tag>
+   - Description: Creates a new image from a container's changes.
+   - Options:
+     - -a, --author: Author Name
+     - -m, --message: Commit message.
+
+6. docker exec -it <container_id or container_name> bash
+   - Description: Run a command in a running container.
+   - Options:
+     - `-i`: Keep STDIN open even if not attached.
+     - `-t`: Allocate a pseudo-TTY.
+
+7. docker inspect:
+
+Description: Display detailed information about one or more containers, images, or networks.
+
+
+8. docker logs:
+
+Description: Fetch the logs of a container.
+Options:
+-f: Follow log output in real-time.
+--tail: Show the last N lines.
+
+These are some of the fundamental Docker commands. You can explore more options and details in the [official Docker documentation](https://docs.docker.com/).

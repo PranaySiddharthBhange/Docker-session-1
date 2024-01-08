@@ -1,0 +1,70 @@
+
+1. sudo docker images
+   - Description: Lists all the locally available Docker images.
+   - Options:
+     - -a, --all: Show all images (default hides intermediate images).
+     - --no-trunc: Display full image IDs.
+     - -q, --quiet: Only show image IDs.
+     - --filter 
+       ex1: "before=image1": Show images before image1
+     - --format json: To list all images in JSON format
+
+
+NOTE : 1. In Docker, an image consists of a series of layers, where each layer represents a set of file changes. These layers are stacked on top of each other to form the final image. When you build a Docker image, each instruction in the Dockerfile creates a new layer. Intermediate layers are the layers that result from the individual steps in the Dockerfile and are not the final image layer.
+       2. The -a or --all option in the docker images command will display all images. However, the output may not explicitly show each individual intermediate layer. Instead, it typically shows the final image .The intermediate layers are usually cleaned up automatically by Docker, and only the final image layers are retained. If you want to inspect the layers of an image in more detail, you can use the docker history command with the image ID or image name.
+       docker history <image_id_or_name>
+       3.Docker images have intermediate layers that increase reusability, decrease disk usage, and speed up docker build by allowing each step to be cached. These intermediate layers are not shown by default.
+       
+
+
+
+2. sudo docker pull <images_name>:<tag>
+   - Description: Downloads a Docker image from a registry.
+   - Options:
+     - --all-tags: Download all tagged images in the repository.
+     - --disable-content-trust: Skip image verification.
+
+
+
+
+3. sudo docker rmi <image_name/id>
+   - Description: Removes one or more Docker images.
+   - Options:
+     - -f, --force: Force removal of the image.
+     - --no-prune: Do not delete untagged parents.
+
+   Note: Can use this in conjunction with docker rmi :
+   sudo docker rmi $(docker images -f "dangling=true" -q)
+
+
+
+4. docker tag <source_image>:<tag> <target_image>:<tag>
+   - Description: Creates a tag TARGET_IMAGE that refers to SOURCE_IMAGE.
+   - Options: None
+
+
+5. sudo docker search <images_name>
+   - Description: Searches the Docker Hub for images.
+   - Options:
+     - --limit: Show limited number of search results. 
+           ex: --limit=2
+     - --filter: Filter the search results.
+           ex: --filter is-official=true
+
+
+6. docker save -o <output_file.tar> <image_name>:<tag>
+   - Description: Saves one or more images to a tar archive.
+   - Options:
+     - -o, --output: Write to a file, instead of STDOUT.
+   Note: This can be useful for sharing or distributing Docker images, especially in environments without direct access to Docker Hub 
+
+
+
+7. docker load -i <input_file.tar>
+   - Description: Loads an image from a tar archive with a file extension .tar.
+   - Options:
+     - --input: Read from a file, instead of STDIN.
+
+
+
+These commands cover the basic image-related operations in Docker. For more detailed information on each command and its options, you can refer to the official Docker documentation: [Docker CLI documentation](https://docs.docker.com/engine/reference/commandline/).

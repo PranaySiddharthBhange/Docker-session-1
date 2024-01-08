@@ -1,0 +1,17 @@
+Dockerfile Parameters:
+
+FROM: Specifies the base image for the new image.
+WORKDIR: Sets the working directory for subsequent instructions.
+COPY: Copies files or directories from the host machine to the container.
+RUN: Executes commands during the build process.
+EXPOSE: Informs Docker that the container will listen on the specified network ports at runtime.
+ENV: Sets environment variables inside the container.
+CMD: Provides a default command to execute when the container starts.
+
+
+ docker build -t <image_name>:<tag> <path_to_dockerfile>
+ 
+   - Description: Builds a Docker image from a Dockerfile.
+   - Options:
+     - -t, --tag: Name and optionally a tag in the 'name:tag' format.
+     - --build-arg: Set build-time variables.

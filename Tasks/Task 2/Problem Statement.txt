@@ -1,0 +1,13 @@
+Run Hello World program of C language inside a conatiner 
+
+Given:
+1.Code
+2.Depends on gcc image
+3.To run the code commands are "gcc HelloWorld.c" and "./a.out"
+
+Implementation:
+
+1.Create a Dockerfile 
+2.Create image from Dockerfile
+3.Create container from image
+4.Run the code inside container

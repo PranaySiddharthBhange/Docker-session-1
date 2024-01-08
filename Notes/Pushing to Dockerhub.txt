@@ -1,0 +1,6 @@
+Step 1 : Create a new repository on Docker Hub.Give name to repository and description(optinal)
+Step 2 : Run Command docker login and enter username and password of Dokcerhub
+Step 3 : Tag the local image
+
+docker tag local-imagename:tag username/repositoryname:tag
+docker push username/repository:tag

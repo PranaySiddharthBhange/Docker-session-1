@@ -1,0 +1,19 @@
+Run React JS website  inside a conatiner 
+
+Given:
+1.Code
+2.Depends on node image
+3.To run the code commands is "npm i" 
+4.By default React website runs on port 3000
+
+Concept : Port mapping 
+
+sudo docker run -p 8080:3000 task3
+
+
+Implementation:
+
+1.Create a Dockerfile 
+2.Create image from Dockerfile
+3.Create container from image
+4.Run the code inside container
